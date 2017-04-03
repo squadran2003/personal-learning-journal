@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %} Personal learning {% endblock %}
+
+{% block content %}
+
+  {% if tags|length == 0 %}
+     
+      <h2 id="header">No Tags created yet!</h2>
+          
+  {% else %}
+  <h1 id="header"> Below are some of your tags</h1>
+  <div class="entry-list">
+      {% for tag in tags %}       
+            <article>
+                <h2><a href="{{ url_for('entries', tag_id = tag.id )}}">{{tag.title}}</a></h2>
+                <time datetime="2016-01-31"></time> 
+                <div class="edit">
+                  <a href="{{ url_for('tag_delete', id = tag.id) }}">Delete</a>
+                </div>
+            </article>
+            
+                  
+        {% endfor %}
+    </div>
+  {% endif %}
+  
+{% endblock %}
+
