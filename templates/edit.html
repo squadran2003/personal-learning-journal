@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% from 'macros.html' import render_field%}
+{% block content %}
+    <div class="edit-entry">   
+        <form method='POST' action=''>
+            {{ form.hidden_tag() }}
+            {% for field in form %}
+             {{render_field(field)}}
+            {{ field(placeholder=field.label.text )}}
+            {% endfor %}
+
+            <input type="submit" value="Publish Entry" class="button">
+            <a href="#" class="button button-secondary">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

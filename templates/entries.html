@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block title %} entries {% endblock %}
+{% block content %}
+  {% if entries|length == 0 %}
+              
+     <h2 id="header">No entries to show!</h2>
+  {% else %}
+      {% for entry in entries %}
+
+        <div class="entry-list">
+            <article>
+                <h2><a href="{{ url_for('details', id = entry.id )}}">{{entry.title}}</a></h2>
+                <time datetime="2016-01-31">{{entry.date}}</time> 
+                
+            </article>
+           
+        </div>
+        {% endfor %}
+  {% endif %}
+  
+{% endblock %}
