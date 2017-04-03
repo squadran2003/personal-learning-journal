@@ -8,7 +8,7 @@ import models
 from forms import *
 
 app = Flask(__name__)
-app.secret_key = 'hjGDSHJFGHFG3878378RYFHV`BXJDBIU633I2OUHFJBFHG'
+app.secret_key = 'hjGDSHJFGHFG3878378RYFHV`BXJDBIU633I2OUHFJBG'
 
 DEBUG = True
 HOST = '0.0.0.0'
